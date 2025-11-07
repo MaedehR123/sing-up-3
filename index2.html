@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دموی ورود مدرن</title>
+    <!-- وارد کردن Tailwind CSS برای استایل‌دهی سریع و پاسخ‌گو -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* وارد کردن فونت Poppins از گوگل برای تایپوگرافی زیبا */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        /* تنظیم فونت پیش‌فرض برای کل صفحه */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* تعریف پس‌زمینه گرادیانتی تیره */
+        .dark-gradient {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        /* افزودن سایه به کارت فرم */
+        .card-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* افکت درخشش برای فیلدهای ورودی هنگام فوکوس */
+        .input-glow:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* گرادیانت برای دکمه ورود */
+        .btn-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        /* تغییر گرادیانت و افکت هاور برای دکمه */
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            transform: translateY(-2px);
+        }
+        
+        /* استایل واترمارک دمو در گوشه بالا سمت چپ */
+        .demo-watermark {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* انیمیشن موج در پس‌زمینه */
+        .wave-animation {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E") repeat-x;
+            animation: wave 10s linear infinite;
+        }
+        
+        /* تعریف انیمیشن موج */
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        /* افکت هاور برای دکمه‌های شبکه‌های اجتماعی */
+        .social-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* انیمیشن نقطه‌های ضربان‌دار */
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        
+        /* تعریف انیمیشن ضربان */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="min-h-screen dark-gradient flex items-center justify-center p-4 relative overflow-hidden">
+    <!-- واترمارک دمو در گوشه بالا سمت چپ -->
+   
+    
+    <!-- انیمیشن موج در پس‌زمینه -->
+    <div class="wave-animation"></div>
+    
+    <!-- کانتینر اصلی -->
+    <div class="flex w-full max-w-6xl mx-auto relative z-10">
+        <!-- بخش سمت چپ - معرفی برند (فقط در نمایشگرهای بزرگ) -->
+        <div class="hidden lg:flex lg:w-1/2 items-center justify-center p-12">
+            <div class="text-center text-white">
+                <div class="mb-8">
+                    <!-- آیکون برند -->
+                    <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full mx-auto mb-6 flex items-center justify-center backdrop-blur-sm">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl font-bold mb-4">به نکسوس خوش آمدید</h1>
+                    <p class="text-xl text-blue-100 mb-8">دروازه شما به سوی بهره‌وری و همکاری بی‌نقص</p>
+                </div>
+                
+                <!-- ویژگی‌های محصول -->
+                <div class="space-y-4 text-right max-w-md">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-white rounded-full pulse-dot"></div>
+                        <span class="text-blue-100">احراز هویت امن و حفاظت از داده‌ها</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-white rounded-full pulse-dot" style="animation-delay: 0.5s;"></div>
+                        <span class="text-blue-100">ابزارهای همکاری بلادرنگ</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-white rounded-full pulse-dot" style="animation-delay: 1s;"></div>
+                        <span class="text-blue-100">داشبورد تحلیلی پیشرفته</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بخش سمت راست - فرم ورود -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+            <div class="bg-white rounded-3xl card-shadow p-8 w-full max-w-md">
+                <!-- سربرگ فرم -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">ورود به حساب</h2>
+                    <p class="text-gray-500">برای ادامه به حساب خود وارد شوید</p>
+                </div>
+                
+                <!-- دکمه‌های ورود با شبکه‌های اجتماعی -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <button class="social-btn flex items-center justify-center p-3 border-2 border-gray-200 rounded-xl hover:border-blue-300 transition-all duration-200" onclick="showDemoMessage('ورود با گوگل')">
+                        <!-- آیکون گوگل -->
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </button>
+                    <button class="social-btn flex items-center justify-center p-3 border-2 border-gray-200 rounded-xl hover:border-blue-300 transition-all duration-200" onclick="showDemoMessage('ورود با اپل')">
+                        <!-- آیکون اپل -->
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- جداکننده -->
+                <div class="flex items-center mb-6">
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                    <span class="px-4 text-sm text-gray-400 font-medium">یا</span>
+                    <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+                
+                <!-- فرم ورود -->
+                <form class="space-y-5" onsubmit="handleDemoLogin(event)">
+                    <!-- فیلد ایمیل -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">آدرس ایمیل</label>
+                        <input 
+                            type="email" 
+                            placeholder="you@example.com"
+                            class="input-glow w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 transition-all duration-200"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- فیلد رمز عبور -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">رمز عبور</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="passwordInput"
+                                placeholder="رمز عبور خود را وارد کنید"
+                                class="input-glow w-full px-4 py-3 pr-12 border-2 border-gray-200 rounded-xl focus:border-blue-500 transition-all duration-200"
+                                required
+                            >
+                            <!-- دکمه نمایش/مخفی کردن رمز عبور -->
+                            <button 
+                                type="button" 
+                                class="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                                onclick="togglePassword()"
+                            >
+                                <svg id="eyeIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- گزینه‌های اضافی -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <span class="ml-2 text-sm text-gray-600">مرا در سیستم نگه دار</span>
+                        </label>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-800 font-medium" onclick="showDemoMessage('بازیابی رمز عبور')">
+                            رمز عبور را فراموش کرده‌اید؟
+                        </a>
+                    </div>
+                    
+                    <!-- دکمه ورود -->
+                    <button 
+                        type="submit" 
+                        class="btn-gradient w-full text-white py-3 px-4 rounded-xl font-semibold transition-all duration-200 transform hover:shadow-lg"
+                    >
+                        ورود به حساب کاربری
+                    </button>
+                </form>
+                
+                <!-- پاورقی -->
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-600">
+                        جدید در نکسوس؟ 
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold" onclick="showDemoMessage('ایجاد حساب')">
+                            ایجاد حساب کاربری
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- مودال دمو -->
+    <div id="demoModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full card-shadow">
+            <div class="text-center">
+                <!-- آیکون مودال -->
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">رابط کاربری دمو</h3>
+                <p class="text-gray-600 mb-6">این یک نمونه طراحی است. در محیط واقعی، این سیستم با سامانه‌های احراز هویت امن و پایگاه داده کاربران ادغام می‌شود.</p>
+                <button 
+                    onclick="closeDemoModal()" 
+                    class="btn-gradient text-white px-6 py-2 rounded-lg font-medium transition-all duration-200"
+                >
+                    متوجه شدم
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- اسکریپت جاوااسکریپت برای مدیریت رفتارهای دمو -->
+    <script>
+        // مدیریت ارسال فرم (جلوگیری از ارسال واقعی)
+        function handleDemoLogin(event) {
+            event.preventDefault();
+            showDemoMessage('تلاش برای ورود');
+        }
+        
+        // نمایش مودال دمو
+        function showDemoMessage(action) {
+            document.getElementById('demoModal').classList.remove('hidden');
+        }
+        
+        // بستن مودال دمو
+        function closeDemoModal() {
+            document.getElementById('demoModal').classList.add('hidden');
+        }
+        
+        // تغییر وضعیت نمایش رمز عبور
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+                `;
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                `;
+            }
+        }
+        
+        // بستن مودال با کلیک خارج از آن
+        document.getElementById('demoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDemoModal();
+            }
+        });
+    </script>
+    <!-- اسکریپت Cloudflare برای چالش‌های امنیتی -->
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97399963e06ad7e4',t:'MTc1NTk0MTUwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
